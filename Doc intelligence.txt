@@ -1,0 +1,36 @@
+curl -i -X POST 
+"POST {endpoint}/documentintelligence/documentModels/{modelId}:analyze?_overload=analyzeDocument&api-version=2024-11-30" 
+-H "Content-Type: application/json" 
+-H "Ocp-Apim-Subscription-Key: {DI_KEY}" --data-ascii "{'urlSource': '<document-url>'}"
+
+
+
+curl -i -X GET "<endpoint>documentintelligence/documentModels/prebuilt-read/analyzeResults/0e49604a-2d8e-4b15-b6b8-bb456e5d3e0a?api-version=2024-11-30"-H "Ocp-Apim-Subscription-Key: <subscription key>" | json
+
+
+Custom Models:
+------------------
+
+
+In Document Intelligence you have plenty of pre-built models. 
+But you might have scenarios in which the document u are trying to process does not confirm to an in-built model.
+For this u can now train your custom model.
+
+2 types of custom models.
+
+Custom Neural:
+-------------
+here u have a base model that has been trained on a large set of docs. 
+you then fine-tine the model with your own data set.
+
+this model supports extracting key data fields from structured, semi-structured and unstructured docs.
+
+you can start with this model first to see if it fits your needs.
+
+Custom Template:
+----------------
+here there is a dependency on the submitted template. here there need to be a consistent visual structure for ur docs.
+
+when training the model, u need to ensure that layout of the doc is static in nature.
+
+the custom template model supports key-value pairs, tables etc.

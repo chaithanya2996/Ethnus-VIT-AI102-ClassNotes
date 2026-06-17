@@ -1,0 +1,12 @@
+Using Document Intelligence
+
+u have sem1 sem2 sem3 upload this into ur storage account
+
+u create a custom extraction model, create a project as marks model, 
+
+as source mention this documents and create a fields like halltickt no, admission number, candidate name, .... 
+
+train the model, after training perform testing with ur sem4 document.
+
+and validate.
+

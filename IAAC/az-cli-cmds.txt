@@ -1,0 +1,35 @@
+Connect Azure Account:
+--------------------------
+
+az login
+az login --use-device-code
+
+To confirm which account u login:
+-----------------------------------
+az account show 
+az account show -o table 
+az account show --output table
+
+
+To create the Azure Resource Group:
+--------------------------------------
+
+az group create --name Chaithanya-RG1 --location centralindia 
+az group create -n Chaithanya-RG2 -l centralindia 
+az group create -g Chaithanya-RG3 -l centralindia 
+az group create --resource-group  name  -l location
+az group create -g Lavanya-RG -l centralindia --verbose
+
+To create the Storage Account:
+---------------------------------
+az storage account create -n stroageaccount-name  -g name-of-RG -l location
+
+az storage account create -n ch17june2026stracc1 -g Chaithanya-RG1
+az storage account create -n ch17june2026stracc2 -g Chaithanya-RG1 --verbose
+
+Task:
+---------
+Create this using Azure CLI:
+Inside of this Storage account:
+Create a blob container with any name.
+In the blob container try to upload some files, using Azure CLI.
