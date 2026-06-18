@@ -1,0 +1,171 @@
+Lab: Create Azure Storage Account and Upload Files Using Azure CLI
+Prerequisites
+Azure Subscription
+Azure CLI installed
+Login to Azure
+az login
+
+Verify subscription:
+
+az account show --output table
+Step 1: Create a Resource Group
+
+Create a Resource Group named rg-storage-demo
+
+az group create \
+--name rg-storage-demo \
+--location eastus
+
+Expected Output:
+
+{
+  "name": "rg-storage-demo",
+  "location": "eastus"
+}
+Step 2: Create a Storage Account
+
+Storage account names must be globally unique and lowercase.
+
+Example:
+
+az storage account create \
+--name mystoragedemo12345 \
+--resource-group rg-storage-demo \
+--location eastus \
+--sku Standard_LRS \
+--kind StorageV2
+
+Verify Storage Account
+az storage account list \
+--resource-group rg-storage-demo \
+--output table
+
+Example Output:
+
+Name                Location
+------------------  --------
+mystoragedemo12345  eastus
+
+Step 3: Get Storage Account Key
+
+Retrieve the access key.
+
+az storage account keys list \
+--resource-group rg-storage-demo \
+--account-name mystoragedemo12345 \
+--output table
+
+Copy the first key.
+
+Or save it into a variable:
+
+Linux/Mac
+ACCOUNT_KEY=$(az storage account keys list \
+--resource-group rg-storage-demo \
+--account-name mystoragedemo12345 \
+--query "[0].value" \
+--output tsv)
+PowerShell
+$ACCOUNT_KEY = az storage account keys list `
+--resource-group rg-storage-demo `
+--account-name mystoragedemo12345 `
+--query "[0].value" `
+--output tsv
+Step 4: Create a Blob Container
+
+Container Name:
+
+mycontainer
+
+Create it:
+
+az storage container create \
+--name mycontainer \
+--account-name mystoragedemo12345 \
+--account-key $ACCOUNT_KEY
+Verify
+az storage container list \
+--account-name mystoragedemo12345 \
+--account-key $ACCOUNT_KEY \
+--output table
+
+Output:
+
+Name
+------------
+mycontainer
+Step 5: Create Sample Files
+Linux
+echo "Hello Azure Storage" > file1.txt
+
+echo "Azure CLI Upload Demo" > file2.txt
+
+Windows PowerShell
+"Hello Azure Storage" | Out-File file1.txt
+
+"Azure CLI Upload Demo" | Out-File file2.txt
+
+Step 6: Upload a Single File
+az storage blob upload \
+--account-name mystoragedemo12345 \
+--account-key $ACCOUNT_KEY \
+--container-name mycontainer \
+--name file1.txt \
+--file file1.txt
+
+Output:
+
+{
+  "etag": "...",
+  "lastModified": "..."
+}
+Step 7: Upload Multiple Files
+
+Create a folder:
+
+mkdir uploads
+
+Move files:
+
+mv file1.txt uploads/
+mv file2.txt uploads/
+
+Upload all files:
+
+az storage blob upload-batch \
+--account-name mystoragedemo12345 \
+--account-key $ACCOUNT_KEY \
+--destination mycontainer \
+--source uploads
+
+Output:
+
+Finished[#############################################################] 100.0000%
+Step 8: List Uploaded Blobs
+az storage blob list \
+--account-name mystoragedemo12345 \
+--account-key $ACCOUNT_KEY \
+--container-name mycontainer \
+--output table
+
+Output:
+
+Name
+---------
+file1.txt
+file2.txt
+Step 9: Download a Blob (Optional)
+az storage blob download \
+--account-name mystoragedemo12345 \
+--account-key $ACCOUNT_KEY \
+--container-name mycontainer \
+--name file1.txt \
+--file downloaded-file1.txt
+Step 10: Clean Up Resources
+
+Delete the entire Resource Group:
+
+az group delete \
+--name rg-storage-demo \
+--yes \
+--no-wait
