@@ -1,0 +1,5 @@
+
+Create a RG:
+az group create --name rg-vit-ai-lab --location centralindia
+
+Hello Bicep - Deploy a Stroage Account.
