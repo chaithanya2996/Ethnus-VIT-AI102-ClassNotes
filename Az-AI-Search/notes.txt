@@ -1,0 +1,63 @@
+Azure AI Search:
+
+It is a Cloud-based search service that helps developers build intelligent search experiences over structured and unstructrued data.
+
+"Google Search for your Organization's data.
+
+Instead of searching the internet, Azure AI Search searches:
+- Documents
+- PDFs
+- Databases
+- Websites
+- Sharepoint Content
+- Blob Storage
+- Knowledge Bases
+- Enterprise Application
+
+Why Organizations use Azure AI Search?
+Challenge:
+Organizations have data everywhere:
+- SQL Databases
+- Storage Account -Blob
+- SharePoint
+- Cosmos DB
+- PDFs
+- Email's
+
+Finding information becomes difficult
+
+Azure AI Search 
+
+Full Text Search:
+--------------------
+Azure Kubernetes
+
+AKS Guide
+AKS Deployment Document
+AKS Security Best Pratices. 
+
+
+Intelligent Search:
+
+Container Orchestration
+
+
+What is a Index?
+Similar to Book Index.
+Page 10
+Page 20
+
+Instead of Reading the entire book, u jump directly 
+
+Index Fields
+Searchable
+
+Filterable
+
+
+What is an Indexer?
+
+Project Details:
+-----------------
+Create a Knowledge Store with Azure AI Search
+Indexing Azure SQL Data using .NET SDK and Azure AI Search

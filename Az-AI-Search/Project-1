@@ -1,0 +1,9 @@
+Indexing Azure SQL Data using .NET SDK and Azure AI Search
+
+you will create an Azure SQL Database,
+sample data, map it to Azure AI Search
+a .NET Application to create an indexer that transfers data from ur sql database to a search index
+
+VS Code
+Dotnet SDK https://dotnet.microsoft.com/en-us/download
+
