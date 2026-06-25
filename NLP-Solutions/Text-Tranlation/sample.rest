@@ -1,0 +1,11 @@
+POST https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&
+from=en&to=it
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: <key>
+Ocp-Apim-Subscription-Region: eastus
+
+[
+    {
+        "Text": "I like to learn new languages"
+    }
+]

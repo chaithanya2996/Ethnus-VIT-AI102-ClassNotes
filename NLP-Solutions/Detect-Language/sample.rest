@@ -1,0 +1,19 @@
+POST https://urlanguageapi.cognitiveservices.azure.com/language/:analyze-text?api-version=2024-11-01
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: 
+
+{
+  "analysisInput": {
+    "documents": [
+      {
+        "id": "1",
+        "text": "Me gusta aprender nuevos idiomas."
+      },
+      {
+        "id": "2",
+        "text": "Comment allez-vous ce matin ?"
+      }
+    ]
+  },
+  "kind": "LanguageDetection"
+}
