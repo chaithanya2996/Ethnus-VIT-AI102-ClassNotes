@@ -1,0 +1,70 @@
+
+Machine learning (ML) is a branch of Artificial Intelligence that enables computers to learn patterns from data and improve their performance on a task without being explicitly programmed for every situation.
+
+Instead of writing a rule for every possible case, you give a machine learning algorithm examples (data), and it discovers patterns on its own.
+
+### Simple example
+
+Imagine you want a computer to recognize cats in photos.
+
+* **Traditional programming:** You would write rules like "cats have pointy ears, whiskers, and four legs." This is difficult because cats look different in many situations.
+* **Machine learning:** You provide thousands of labeled images of cats and non-cats. The algorithm learns the patterns that distinguish them and can then classify new images.
+
+### How machine learning works
+
+The typical process is:
+
+1. **Collect data** (e.g., photos, emails, sales records).
+2. **Train a model** by finding patterns in the data.
+3. **Test the model** on new, unseen data.
+4. **Use the model** to make predictions or decisions.
+
+### Types of machine learning
+
+* **Supervised learning:** Learns from labeled data (e.g., predicting house prices or detecting spam emails).
+* **Unsupervised learning:** Finds hidden patterns in unlabeled data (e.g., grouping similar customers).
+* **Reinforcement learning:** Learns by trial and error through rewards and penalties (e.g., training robots or game-playing AI).
+
+### Everyday examples
+
+Machine learning powers many applications you use every day:
+
+* Email spam filtering
+* Movie and music recommendations
+* Voice assistants
+* Language translation
+* Face recognition
+* Fraud detection
+* Self-driving car technology
+
+### A simple analogy
+
+Think of teaching a child to recognize apples:
+
+* Instead of describing every characteristic of an apple, you show the child many apples and many other fruits.
+* Over time, the child learns to recognize apples from experience.
+* Machine learning works in a similar way—by learning from examples rather than following a fixed set of rules.
+
+In short, **machine learning is the science of enabling computers to learn from data so they can make predictions, recognize patterns, or make decisions without being explicitly programmed for every possible scenario.**
+
+
+What is Azure Machine Learning?
+===================================
+its a Cloud Service that accelerated and manages the Machine Learning (ML) project lifecycle.
+ML Proffesional, data scientist, and engineers use it in there daily workflows 
+to train and deploy models and manage machine learning operations (MLOps).
+
+U can create a model in ML or use a model built from an open-source platform.
+such as PyTorch, TensorFlow, or SciKit-Learn. 
+MLOps tools help u to monitor, retrain and redploy the models.
+
+without Azure ML ->
+ Install software anaconda / some libraries by ur self. Coding, Testing all the models.  
+ Finalize best fit model
+
+with Azure ML ->
+ Readymade platform, u don't need to code here. selct or drag and drop, no code, 
+ parameters, values, PreCOding, Testing Feautuees and test the model, Finalize the best fit model.
+
+
+ 
